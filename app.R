@@ -1,7 +1,4 @@
 library(tidyverse)
-library(lubridate)
-library(ggplot2)
-library(Metrics)
 library(shiny)
 library(rsconnect)
 
@@ -74,13 +71,13 @@ server = function(input, output)
   output$race_plot = renderPlot({
     df = predictReactive()
     ggplot(df, aes(y = race, x = predicted_scores)) +
-      geom_segment(aes(y = race, yend = race, x = 0, xend = predicted_scores), color = "skyblue", size = 1) +
+      geom_segment(aes(y = race, yend = race, x = 1, xend = predicted_scores), color = "skyblue", size = 1) +
       geom_point(color = "blue", size = 4) +
       coord_cartesian(xlim = c(1, 10)) +
       scale_x_continuous(breaks = 1:10) + 
       labs(
-        x = "Race",
-        y = "Predicted COMPAS Score",
+        x = "Predicted COMPAS Score",
+        y = "Race",
         title = "Predicted COMPAS Score by Race"
       ) +
       theme_minimal() +
@@ -88,7 +85,7 @@ server = function(input, output)
   })
   
   output$explanation = renderText({
-    "This interactive chart shows predicted COMPAS scores for a hypothetical individual across different races. You can adjust age, sex, and other attributes to explore how the scores change and see the effects of race on predictions."
+    "This interactive chart shows predictions from a linear model trained on COMPAS data. For a hypothetical individual, all characteristics are held constant while race is varied to illustrate how the model's predictions differ across racial groups."
   })
 }
 

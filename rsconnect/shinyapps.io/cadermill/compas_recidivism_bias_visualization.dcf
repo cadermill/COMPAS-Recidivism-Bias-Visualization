@@ -1,0 +1,10 @@
+name: compas_recidivism_bias_visualization
+title:
+username: cadermill
+account: cadermill
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 18086497
+bundleId: 12646614
+url: https://cadermill.shinyapps.io/compas_recidivism_bias_visualization/
+version: 1

@@ -1,0 +1,10 @@
+name: compas_bias_model_visualization
+title:
+username: cadermill
+account: cadermill
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 16313997
+bundleId: 12646617
+url: https://cadermill.shinyapps.io/compas_bias_model_visualization/
+version: 1
